@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-class ColorPickerConfig: ObservableObject {
+public class ColorPickerConfig: ObservableObject {
     @Published var hue: Double = 0.0 // Set initial hue
     @Published var saturation: Double = 1.0
     @Published var brightness: Double = 1.0

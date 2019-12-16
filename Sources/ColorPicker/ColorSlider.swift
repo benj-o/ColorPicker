@@ -9,15 +9,15 @@
 import SwiftUI
 import Sliders
 
-struct ColorSlider: View {
+public struct ColorSlider: View {
     
     @EnvironmentObject var colorPickerConfig: ColorPickerConfig
     
     private var hue: Double { colorPickerConfig.hue }
     private var saturation: Double { colorPickerConfig.saturation }
     private var brightness: Double { colorPickerConfig.brightness }
-    static let THUMB_SIZE: CGFloat = 48
-    static let TRACK_HEIGHT: CGFloat = 35
+    public static let THUMB_SIZE: CGFloat = 48
+    public static let TRACK_HEIGHT: CGFloat = 35
     
     var mode: Mode
     
@@ -59,12 +59,12 @@ struct ColorSlider: View {
         )
     }
     
-    enum Mode {
+    public enum Mode {
         case saturation
         case brightness
     }
     
-    init(_ mode: ColorSlider.Mode) {
+    public init(_ mode: ColorSlider.Mode) {
         self.mode = mode
     }
     
