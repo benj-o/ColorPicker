@@ -35,7 +35,7 @@ public struct ColorWheel: View {
     
     public var frame: CGRect
     @State private var position: CGPoint = CGPoint.zero
-    @State private var angle: Angle = 0.0
+    @State private var angle: Angle = .degrees(0.0)
     public var strokeWidth: CGFloat
     
     public var body: some View {
