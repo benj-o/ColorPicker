@@ -7,7 +7,7 @@ A fully modular, interactive color wheel with optional saturation/brightness sli
 Add this repository as a Swift Package Dependency to your project. You find the option in Xcode unter "File > Swift Packages > Add Package Dependency...". Paste the HTTPS reference to this repo and you're done!
 
 <aside class="notice">
-    <b>YOU MUST</b> add an `.environmentObject(_:)` modifier to your top level View, do this in AppDelegate.swift or SceneDelegate.swift, depending on which platform(s) you are building your app for.
+    <b>YOU MUST</b> add an `.environmentObject(_:)` modifier to your top level View, do this in AppDelegate.swift or SceneDelegate.swift, depending on whichever platform(s) you are building your app for.
 </aside>
 
 ## Usage
@@ -31,6 +31,14 @@ ColorSlider(.brightness) // Present a linear slider for selecting a brightness v
 ```
 You pass either `.saturation` or `.brightness` (depending on the desired control) to `ColorSlider`'s initialiser. You will notice that interaction to any of these controls instantly updates all the others!
 
+##  Using the color selected by controls
+Add this line to a View structure which needs to access the current color:
+```swift
+@EnvironmentObject var colorPickerConfig: ColorPickerConfig
+```
+
+Read on to discover the various ways to use the selected colour. 
+
 ## Mechanics
 `ColorPicker` and `ColorSlider` make use of a shared EnvironmentObject (`ColorPickerConfig` — I know, ingenious naming). This is why you must add the modifier in your delegate file.
 
@@ -41,7 +49,7 @@ You pass either `.saturation` or `.brightness` (depending on the desired control
 - `color` — A SwiftUI Color object dynamically constructed from HSB values. This is **not** a View-updating property.
 - `hex` — A hex code representing the current value. This is **not** a View-updating property.
 
-A `.hex` computed property is also provided as an extension of UIColor. Your're welcome.
+A `.hex` computed property is also provided as an extension of UIColor. You're welcome.
 
 
 ## Credits
