@@ -8,14 +8,17 @@
 
 import SwiftUI
 
-#if canImport(AppKit)
-import AppKit
-public typealias PlatformColor = NSColor
-#elseif canImport(UIKit)
+#if canImport(UIKit)
 import UIKit
 public typealias PlatformColor = UIColor
+
+#elseif canImport(AppKit)
+import AppKit
+public typealias PlatformColor = NSColor
+
 #else
 #error("Unsupported platform.")
+
 #endif
 
 public class ColorPickerConfig: ObservableObject {
@@ -24,7 +27,7 @@ public class ColorPickerConfig: ObservableObject {
     @Published public var saturation: Double = 1.0
     @Published public var brightness: Double = 1.0
     
-    #if !canImport(AppKit)
+    #if canImport(UIKit)
     
     public var uiColor: PlatformColor {
         .init(hue: CGFloat(self.hue), saturation: CGFloat(self.saturation), brightness: CGFloat(self.brightness), alpha: 1.0)
