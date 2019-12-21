@@ -2,7 +2,8 @@
 
 A fully modular, interactive color wheel with optional saturation/brightness sliders written in pure SwiftUI.
 
-![](picker.gif)
+![](picker.gif)  
+
 (Please excuse the GIF quality!)
 
 ## Setup
