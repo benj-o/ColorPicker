@@ -4,7 +4,7 @@ A fully modular, interactive color wheel with optional saturation/brightness sli
 
 ## Setup
 
-Add this repository as a Swift Package Dependency to your project. You find the option in Xcode unter "File > Swift Packages > Add Package Dependency...". Paste the HTTPS reference to this repo and you're done!
+Add this repository as a Swift Package Dependency to your project. You find the option in Xcode unter "File > Swift Packages > Add Package Dependency...". Paste the HTTPS reference to this repo, select **branch** (not 'version', this is very important!!) and you're done!
 
 <aside class="notice">
     <b>YOU MUST</b> add an `.environmentObject(_:)` modifier to your top level View, do this in AppDelegate.swift or SceneDelegate.swift, depending on whichever platform(s) you are building your app for.
@@ -44,12 +44,12 @@ Read on to discover the various ways to use the selected colour.
 
 `ColorPickerConfig` has a few handy properties which you can use:
 
-- `hue`, `saturation`,  `brightness` — self-explanatory (these are all marked with the `@Published` modifier so will update your `View`s)
-- `uiColor` — A UIColor object dynamically constructed from HSB values. This is **not** a View-updating property.
+- `hue`, `saturation`,  `brightness` — Hue, Saturation or Brightness values (as selected by color picker controls). These are all marked with `@Published` modifiers so will update your `View`s.
+- `uiColor`/`nsColor` — A platform-specific color object dynamically constructed from HSB values. This is **not** a View-updating property.
 - `color` — A SwiftUI Color object dynamically constructed from HSB values. This is **not** a View-updating property.
 - `hex` — A hex code representing the current value. This is **not** a View-updating property.
 
-A `.hex` computed property is also provided as an extension of UIColor. You're welcome.
+A `.hex` computed property is also provided as an extension of the platform-specific color (either NSColor or UIColor). You're welcome.
 
 
 ## Credits

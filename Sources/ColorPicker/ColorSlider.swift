@@ -9,6 +9,7 @@
 import SwiftUI
 import Sliders
 
+/// A linear control for selecting a saturation or brightness value, affecting the color values stored in the shared environment object.
 public struct ColorSlider: View {
     
     @EnvironmentObject var colorPickerConfig: ColorPickerConfig

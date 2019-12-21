@@ -11,6 +11,7 @@
 
 import SwiftUI
 
+/// A picker control for choosing a hue value from a 360° wheel, affecting the color values stored in the shared environment object.
 public struct ColorPicker: View {
     
     @EnvironmentObject var config: ColorPickerConfig
@@ -23,7 +24,7 @@ public struct ColorPicker: View {
         .aspectRatio(1, contentMode: .fit)
     }
     
-    public init(width strokeWidth: CGFloat) {
+    public init(strokeWidth: CGFloat) {
         self.strokeWidth = strokeWidth
     }
     
