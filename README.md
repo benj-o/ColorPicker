@@ -2,6 +2,9 @@
 
 A fully modular, interactive color wheel with optional saturation/brightness sliders written in pure SwiftUI.
 
+![](picker.gif)
+(Please excuse the GIF quality!)
+
 ## Setup
 
 Add this repository as a Swift Package Dependency to your project. You find the option in Xcode unter "File > Swift Packages > Add Package Dependency...". Paste the HTTPS reference to this repo, select **branch** (not 'version', this is very important!!) and you're done!
@@ -45,9 +48,9 @@ Read on to discover the various ways to use the selected colour.
 `ColorPickerConfig` has a few handy properties which you can use:
 
 - `hue`, `saturation`,  `brightness` — Hue, Saturation or Brightness values (as selected by color picker controls). These are all marked with `@Published` modifiers so will update your `View`s.
-- `uiColor`/`nsColor` — A platform-specific color object dynamically constructed from HSB values. This is **not** a View-updating property.
-- `color` — A SwiftUI Color object dynamically constructed from HSB values. This is **not** a View-updating property.
-- `hex` — A hex code representing the current value. This is **not** a View-updating property.
+- `uiColor`/`nsColor` — A platform-specific color object dynamically constructed from HSB values.
+- `color` — A SwiftUI Color object dynamically constructed from HSB values.
+- `hex` — A hex code representing the current value.
 
 A `.hex` computed property is also provided as an extension of the platform-specific color (either NSColor or UIColor). You're welcome.
 
